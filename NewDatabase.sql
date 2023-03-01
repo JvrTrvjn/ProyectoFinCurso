@@ -19,8 +19,11 @@ INSERT INTO Libros VALUES (2,'El vieto nos llevará','Monica Carrillo','12096734
 INSERT INTO Libros VALUES (3,'Azami','Aki Shimazaku','12096712', 15);
 INSERT INTO Libros VALUES (4,'La huella de infierno','Leigh Bardugo','12096721', 18);
 INSERT INTO Libros VALUES (5,'El cuco de cristal','Jvier Castillo','12096743', 21);
-INSERT INTO Libros VALUES (1,'1','Administrador','Admin', 'javier.trevijano@outlook.com');
-INSERT INTO Libros VALUES (2,'12345678','Juan','Campanario', 'juanito@gmail.com');
+INSERT INTO Usuarios VALUES (1,'1','Administrador','Admin', 'javier.trevijano@outlook.com');
+INSERT INTO Usuarios VALUES (2,'12345678','Juan','Campanario', 'juanito@gmail.com');
+UPDATE Libros SET Titulo = 'El viento nos llevará' WHERE LibroID = 2;
+UPDATE Libros SET Autor = 'Javier Castillo' WHERE LibroID = 5;
+
 
 
 
