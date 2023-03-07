@@ -23,6 +23,8 @@ INSERT INTO Usuarios VALUES (1,'1','Administrador','Admin', 'javier.trevijano@ou
 INSERT INTO Usuarios VALUES (2,'12345678','Juan','Campanario', 'juanito@gmail.com');
 UPDATE Libros SET Titulo = 'El viento nos llevará' WHERE LibroID = 2;
 UPDATE Libros SET Autor = 'Javier Castillo' WHERE LibroID = 5;
+CREATE USER usuario01 IDENTIFIED BY 'contraseña01';
+GRANT ALL PRIVILEGES ON newdatabase.* TO usuario01;
 
 
 
