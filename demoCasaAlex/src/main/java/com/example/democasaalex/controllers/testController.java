@@ -19,8 +19,8 @@ public class testController {
         this.libroService = libroService;
     }
 
-    @RequestMapping(value = "prueba")
+    @RequestMapping
     public List<Libro> getLibros(){
-        return libroService.getLibros();
+        return null;
     }
 }
