@@ -1,26 +1,26 @@
 package com.example.democasaalex.controllers;
 
 import com.example.democasaalex.Identity.Libro;
-import com.example.democasaalex.service.LibroService;
+import com.example.democasaalex.service.LibroServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.List;
-
-@RestController(value = "/")
+@RestController
+@RequestMapping("/libreria")
 public class testController {
 
-    private final LibroService libroService;
+/*    @Autowired
+    private LibroServiceImpl libroServiceImpl;*/
 
-    @Autowired
-    public testController(LibroService libroService) {
-        this.libroService = libroService;
-    }
+/*    @RequestMapping("/libros/{libroId}")
+    public Libro getLibro(@PathVariable Long libroId){
+        return this.libroServiceImpl.getLibro(libroId);
+    }*/
 
-    @RequestMapping
-    public List<Libro> getLibros(){
-        return null;
+    @RequestMapping("/libros")
+    public void simpleDisplayController(){
+        System.out.println("Esto funciona.");
     }
 }
