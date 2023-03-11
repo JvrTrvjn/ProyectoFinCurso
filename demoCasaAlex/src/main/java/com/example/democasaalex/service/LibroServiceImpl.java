@@ -7,14 +7,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Service
+
 public class LibroServiceImpl implements LibroService {
-    @Autowired
+
     private LibroRepository libroRepository;
 
-    @Override
-    public Libro getLibro(Long id) {
+    /*@Override
+    public Libro one(Long id) {
         Optional<Libro> optionalLibro = libroRepository.findById(id);
         return optionalLibro.get();
-    }
+    }*/
 }

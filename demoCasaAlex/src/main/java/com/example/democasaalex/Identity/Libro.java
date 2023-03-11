@@ -4,8 +4,10 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+import java.util.Objects;
+
 @Entity
-@Table(name = "libros")
+//@Table(name = "libros")
 public class Libro {
     @Id
     private Long id;
@@ -65,6 +67,18 @@ public class Libro {
         this.precio = precio;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Libro libro = (Libro) o;
+        return Objects.equals(id, libro.id) && Objects.equals(titulo, libro.titulo) && Objects.equals(autor, libro.autor) && Objects.equals(isbn, libro.isbn) && Objects.equals(precio, libro.precio);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(this.autor,this.titulo,this.id,this.isbn,this.precio);
+    }
 
     @Override
     public String toString() {
