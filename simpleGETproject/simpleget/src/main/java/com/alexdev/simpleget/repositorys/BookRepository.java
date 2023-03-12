@@ -9,4 +9,7 @@ import com.alexdev.simpleget.entity.Book;
 public interface BookRepository extends CrudRepository<Book, Long> {
     public ArrayList<Book> findAll();
     public Book findById(long id);
+
+    public Book save(Book book);
+
 }
