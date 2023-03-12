@@ -27,9 +27,10 @@ public class BooksController {
 	}
 
 
-	@PostMapping("/books/create")
+	//@PostMapping("/books/create")
+	@RequestMapping(method = RequestMethod.POST, value ="/books")
 	public void saveBook(@RequestBody Book book){
-		book = new Book();
+		//book = new Book();
 		bookService.save(book);
 	}
 }
