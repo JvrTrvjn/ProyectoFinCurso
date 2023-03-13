@@ -27,10 +27,21 @@ public class BooksController {
 	}
 
 
-	//@PostMapping("/books/create")
 	@RequestMapping(method = RequestMethod.POST, value ="/books")
-	public void saveBook(@RequestBody Book book){
-		//book = new Book();
-		bookService.save(book);
+	public void saveBook(@RequestBody Book newBook){
+		bookService.save(newBook);
 	}
+	@DeleteMapping("/books/{id}")
+	public void deleteById(@PathVariable Long id){
+		bookService.delete(id);
+	}
+	@PutMapping(value ="/books/{id}")
+	public void updateBook(@RequestBody Book newBook,@PathVariable Long id){
+		if(id.equals(newBook.getId())){
+			bookService.delete(id);
+			bookService.save(newBook);}
+		else {
+			bookService.save(newBook);}
+	}
+
 }

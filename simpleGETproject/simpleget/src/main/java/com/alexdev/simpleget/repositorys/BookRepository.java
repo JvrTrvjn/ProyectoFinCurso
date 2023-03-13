@@ -10,5 +10,8 @@ public interface BookRepository extends CrudRepository<Book, Long> {
     public ArrayList<Book> findAll();
     public Book findById(long id);
 
+    public Book save(Book newBook);
+
+    public void deleteById(long id);
 
 }
