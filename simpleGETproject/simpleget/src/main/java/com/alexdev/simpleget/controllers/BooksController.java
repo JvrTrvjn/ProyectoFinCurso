@@ -1,7 +1,6 @@
 package com.alexdev.simpleget.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.alexdev.simpleget.services.BookService;
 
@@ -36,12 +35,21 @@ public class BooksController {
 		bookService.delete(id);
 	}
 	@PutMapping(value ="/books/{id}")
+	public void update(@RequestBody Book newBook, @PathVariable Long id){
+		Book updateBook = bookService.getBook(id);
+		updateBook.setTitle(newBook.getTitle());
+		updateBook.setAuthor(newBook.getAuthor());
+		updateBook.setPrice(newBook.getPrice());
+		updateBook.setISBN(newBook.getISBN());
+		 bookService.save(newBook);
+	}
+	/*@PutMapping(value ="/books/{id}")
 	public void updateBook(@RequestBody Book newBook,@PathVariable Long id){
 		if(id.equals(newBook.getId())){
 			bookService.delete(id);
 			bookService.save(newBook);}
 		else {
 			bookService.save(newBook);}
-	}
+	}*/
 
 }
