@@ -5,7 +5,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
 
+import jdk.jshell.Snippet;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -14,6 +16,7 @@ import lombok.NoArgsConstructor;
 @Table(name ="LIBROS")
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Book {
     
     @Id
@@ -31,4 +34,6 @@ public class Book {
     
     @Column(name ="PRECIO")
  	  private float price;
+
+
 }
