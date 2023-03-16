@@ -1,6 +1,7 @@
-package com.alexdev.simpleget.services;
+package com.alexdev.simpleget.repositorys;
 
 import com.alexdev.simpleget.entity.Book;
+import com.alexdev.simpleget.repositorys.BookRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -12,10 +13,10 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class BookServiceTests {
+class BookRepositoryTests {
 
     @Mock
-    private BookService bookService;
+    private BookRepository bookRepository;
 
     private Book bookTest1;
     private Book bookTest2;
@@ -44,7 +45,7 @@ public class BookServiceTests {
         List<Book> listTest = new ArrayList<>();
         listTest.add(bookTest1);
         listTest.add(bookTest2);
-        Mockito.when(bookService.getBooks()).thenReturn((ArrayList<Book>) listTest);
+        Mockito.when(bookRepository.findAll()).thenReturn((ArrayList<Book>) listTest);
 
         assertEquals(listTest.get(0).getId(), bookTest1.getId());
         assertEquals(listTest.get(0).getTitle(), bookTest1.getTitle());
@@ -61,19 +62,20 @@ public class BookServiceTests {
     }
     @Test
     public void findByIdTest(){
-        Mockito.when(bookService.getBook(bookTest1.getId())).thenReturn(bookTest1);
-        assertEquals(bookService.getBook(1), bookTest1);
+        Mockito.when(bookRepository.findById(bookTest1.getId())).thenReturn(bookTest1);
+        assertEquals(bookRepository.findById(1), bookTest1);
     }
 
     @Test
     public void deleteByIdTest(){
-        Mockito.when(bookService.getBook(bookTest1.getId())).thenReturn(bookTest1);
-        bookService.delete(bookTest1.getId());
-        Mockito.verify(bookService).delete(bookTest1.getId());
+        Mockito.when(bookRepository.findById(bookTest1.getId())).thenReturn(bookTest1);
+        bookRepository.deleteById(bookTest1.getId());
+        Mockito.verify(bookRepository).deleteById(bookTest1.getId());
     }
     @Test
     public void save(){
-        Mockito.when(bookService.save(bookTest1)).thenReturn(bookTest1);
-        bookService.getBook(bookTest1.getId());
+        Mockito.when(bookRepository.save(bookTest1)).thenReturn(bookTest1);
+        bookRepository.findById(bookTest1.getId());
     }
+
 }

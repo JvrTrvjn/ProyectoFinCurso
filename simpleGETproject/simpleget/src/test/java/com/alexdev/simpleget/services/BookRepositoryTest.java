@@ -18,7 +18,6 @@ class BookRepositoryTest {
     @Mock
     private BookRepository bookRepository;
 
-
     private Book bookTest1;
     private Book bookTest2;
 
@@ -39,8 +38,6 @@ class BookRepositoryTest {
         bookTest2.setAuthor("sdfdf");
         bookTest2.setISBN("23423423");
         bookTest2.setPrice(10.234f);
-
-
 
     }
     @Test
