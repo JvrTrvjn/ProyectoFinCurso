@@ -19,7 +19,7 @@ public class BooksController {
 		return bookService.getBooks();
 	}
 
-	@GetMapping("/books/{id}")
+	@GetMapping("/book/{id}")
 	public Book getBook(@PathVariable Long id) {
 		return bookService.getBook(id);
 	}
@@ -29,7 +29,7 @@ public class BooksController {
 	public void saveBook(@RequestBody Book newBook){
 		bookService.saveBook(newBook);
 	}
-	@DeleteMapping("/books/{id}")
+	@DeleteMapping("/book/{id}")
 	public void deleteById(@PathVariable Long id){
 		bookService.delete(id);
 	}

@@ -10,13 +10,14 @@ public class UserServiceImpl implements UserService{
     @Autowired
     private UserRepository userRepository;
 
+
     @Override
-    public List<User> showAllByDniOrEmail() {
-        return userRepository.findAllByDniOrEmail();
+    public List<User> getUsers() {
+        return userRepository.findAll();
     }
 
     @Override
-    public User showUserByID(Long userId) {
+    public User showUserByID(Integer userId) {
         return userRepository.findByUserID(userId);
     }
 
@@ -26,7 +27,7 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
-    public void deleteUserByID(Long userId) {
+    public void deleteUserByID(Integer userId) {
        userRepository.deleteByUserID(userId);
     }
 }

@@ -6,11 +6,12 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.ArrayList;
 
-public interface UserRepository extends CrudRepository<User,Long> {
-    public ArrayList<User> findAllByDniOrEmail();
-    public User findByUserID(Long userId);
+public interface UserRepository extends CrudRepository<User,Integer> {
+    public ArrayList<User> findAll();
+
+    public User findByUserID(Integer userId);
 
     public void save(Book newUser);
 
-    public void deleteByUserID(Long userId);
+    public void deleteByUserID(Integer userId);
 }

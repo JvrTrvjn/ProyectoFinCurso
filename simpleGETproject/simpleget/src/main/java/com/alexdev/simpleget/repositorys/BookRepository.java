@@ -12,7 +12,7 @@ public interface BookRepository extends CrudRepository<Book, Long> {
 
     public Book save(Book newBook);
 
-    public void deleteById();
+    public void deleteById(long id);
 
 
 }

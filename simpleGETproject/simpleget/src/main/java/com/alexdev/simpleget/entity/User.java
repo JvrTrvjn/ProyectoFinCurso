@@ -11,14 +11,14 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name ="Usuarios")
+@Table(name ="USUARIOS")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
 public class User {
     @Id
     @Column(name ="USERID")
-    private Long userID;
+    private Integer userID;
 
     @Column(name ="DNI")
     private String dni;
