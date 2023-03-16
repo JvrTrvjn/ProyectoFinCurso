@@ -1,5 +1,7 @@
 package com.alexdev.simpleget.configuration;
 
+import com.alexdev.simpleget.services.UserServiceImpl;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -11,5 +13,9 @@ public class BeanConfiguration {
     @Bean
     public BookServiceImpl getBookServiceImpls(){
         return new BookServiceImpl();
+    }
+    @Bean
+    public UserServiceImpl UserServiceImpls(){
+        return new UserServiceImpl();
     }
 }
