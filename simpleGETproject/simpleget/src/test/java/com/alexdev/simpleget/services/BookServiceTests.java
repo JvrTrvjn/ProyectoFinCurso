@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class BookServiceTests {
 
     @Mock
@@ -61,8 +60,9 @@ public class BookServiceTests {
     }
     @Test
     public void findByIdTest(){
+        Long bookId = bookTest1.getId();
         Mockito.when(bookService.getBook(bookTest1.getId())).thenReturn(bookTest1);
-        assertEquals(bookService.getBook(1), bookTest1);
+        assertEquals(bookService.getBook(bookId), bookTest1);
     }
 
     @Test
@@ -73,7 +73,6 @@ public class BookServiceTests {
     }
     @Test
     public void save(){
-        Mockito.when(bookService.save(bookTest1)).thenReturn(bookTest1);
-        bookService.getBook(bookTest1.getId());
-    }
-}
+        bookService.saveBook(bookTest2);
+        bookService.getBook(bookTest2.getId());
+}}

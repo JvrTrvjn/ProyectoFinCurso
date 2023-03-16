@@ -18,7 +18,7 @@ public class BookTests {
     public void saveBookTest(){
 
       Book book = new Book(8,"Givenchy","Duki", "923475", 3.234f);
-       // Book savedBook = service.save(book);
+       // Book savedBook = service.saveBook(book);
         Book savedBook = repository.save(book);
 
         Assertions.assertNotNull(savedBook);

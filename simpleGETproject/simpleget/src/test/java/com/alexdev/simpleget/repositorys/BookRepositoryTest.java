@@ -1,7 +1,6 @@
 package com.alexdev.simpleget.repositorys;
 
 import com.alexdev.simpleget.entity.Book;
-import com.alexdev.simpleget.repositorys.BookRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
@@ -13,7 +12,7 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class BookRepositoryTests {
+class BookRepositoryTest {
 
     @Mock
     private BookRepository bookRepository;

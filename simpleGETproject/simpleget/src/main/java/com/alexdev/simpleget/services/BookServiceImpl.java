@@ -23,7 +23,7 @@ public class BookServiceImpl implements BookService {
     }
 
     @Override
-    public void save(Book newBook) {
+    public void saveBook(Book newBook) {
         bookRepository.save(newBook);
     }
 
@@ -56,7 +56,7 @@ public class BookServiceImpl implements BookService {
             book.setAuthor(request.author());
             book.setISBN(request.ISBN());
             book.setPrice(request.price());
-            bookRepository.save(book);
+            bookRepository.saveBook(book);
         }
 
 

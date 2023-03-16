@@ -1,6 +1,5 @@
 package com.alexdev.simpleget.controllers;
 
-import com.alexdev.simpleget.repositorys.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import com.alexdev.simpleget.services.BookService;
@@ -28,7 +27,7 @@ public class BooksController {
 
 	@RequestMapping(method = RequestMethod.POST, value ="/books")
 	public void saveBook(@RequestBody Book newBook){
-		bookService.save(newBook);
+		bookService.saveBook(newBook);
 	}
 	@DeleteMapping("/books/{id}")
 	public void deleteById(@PathVariable Long id){
@@ -36,7 +35,7 @@ public class BooksController {
 	}
 	@PutMapping(value ="/books/{id}")
 	public void update (@RequestBody Book updateBook, @PathVariable Long id) {
-		bookService.save(Book.builder()
+		bookService.saveBook(Book.builder()
 				.id(id)
 				.title(updateBook.getTitle())
 				.author(updateBook.getAuthor())
