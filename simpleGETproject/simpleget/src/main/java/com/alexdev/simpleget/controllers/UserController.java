@@ -29,8 +29,8 @@ public class UserController {
     public void deleteUserById(@PathVariable Integer userId){
         userService.deleteUserById(userId);
     }
-    @PutMapping("/user/{id}")
-    public void update(@RequestBody User updateUser, @PathVariable Integer userId){
+    @PutMapping("/user/{userId}")
+    public void updateUser(@RequestBody User updateUser, @PathVariable Integer userId){
         userService.saveUser(User.builder()
                 .userId(userId)
                 .dni(updateUser.getDni())
