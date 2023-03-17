@@ -16,23 +16,23 @@ public class UserController {
     public List<User> getUsers () {
         return userService.getUsers();
     }
-    @GetMapping("/user/{id}")
-    public User showUserByID(@PathVariable Integer userId){
-        return userService.showUserByID(userId);
+    @GetMapping("/user/{userId}")
+    public User getUserById(@PathVariable Integer userId){
+        return userService.getUserById(userId);
     }
 
-    @PostMapping("/user/{id}")
+    @PostMapping("/user/{userId}")
     public void saveUser(@RequestBody User newUser){
         userService.saveUser(newUser);
     }
-    @DeleteMapping("/user/{id}")
-    public void deleteUserByID(@PathVariable Integer userId){
-        userService.deleteUserByID(userId);
+    @DeleteMapping("/user/{userId}")
+    public void deleteUserById(@PathVariable Integer userId){
+        userService.deleteUserById(userId);
     }
     @PutMapping("/user/{id}")
     public void update(@RequestBody User updateUser, @PathVariable Integer userId){
         userService.saveUser(User.builder()
-                .userID(userId)
+                .userId(userId)
                 .dni(updateUser.getDni())
                 .nombre(updateUser.getNombre())
                 .apellido(updateUser.getApellido())

@@ -18,7 +18,7 @@ import lombok.NoArgsConstructor;
 public class User {
     @Id
     @Column(name ="USERID")
-    private Integer userID;
+    private Integer userId;
 
     @Column(name ="DNI")
     private String dni;

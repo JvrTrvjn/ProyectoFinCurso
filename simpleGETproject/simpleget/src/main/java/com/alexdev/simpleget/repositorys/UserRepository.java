@@ -9,9 +9,9 @@ import java.util.ArrayList;
 public interface UserRepository extends CrudRepository<User,Integer> {
     public ArrayList<User> findAll();
 
-    public User findByUserID(Integer userId);
+    public User findByUserId(Integer userId);
 
     public void save(Book newUser);
 
-    public void deleteByUserID(Integer userId);
+    public void deleteByUserId(Integer userId);
 }
