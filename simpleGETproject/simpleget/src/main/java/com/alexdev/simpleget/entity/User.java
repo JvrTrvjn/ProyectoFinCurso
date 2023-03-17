@@ -20,7 +20,7 @@ import org.springframework.stereotype.Component;
 public class User {
     @Id
     @Column(name ="USERID")
-    private Integer userId;
+    private Long userId;
 
     @Column(name ="DNI")
     private String dni;
