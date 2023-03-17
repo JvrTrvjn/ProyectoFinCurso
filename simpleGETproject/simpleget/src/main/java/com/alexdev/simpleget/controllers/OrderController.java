@@ -14,25 +14,16 @@ public class OrderController {
     private OrderService orderService;
 
     @GetMapping("/orders")
-    public List<Order> getAllOrders(@RequestParam Order order){
-        return orderService.getAllOrders(order);
+    public List<Order> getAllOrders(){
+        return orderService.getAllOrders();
     }
     @GetMapping("/orders/{userId}")
     public Order getOrderByUserId(@PathVariable("userId")Long userId){
         return orderService.getOrderByUserId(userId);
     }
 
-    @PostMapping("/orders")
-    public void saveOrder(@RequestBody Order order){
-        orderService.saveOrder(order);
-    }
 
-    @DeleteMapping("/orders/{userId}")
-    public void deleteOrderByUserId(@PathVariable("userId")Long userId){
-        orderService.deleteOrderByUserId(userId);
-    }
-
-    @PutMapping("/orders/{userId}")
+    @PutMapping("/orders/{orderId}")
     public void updateOrder(@RequestBody Order updateOrder, @PathVariable Long orderId){
         orderService.updateOrder(Order.builder()
                 .orderId(orderId)
@@ -40,5 +31,9 @@ public class OrderController {
                 .orderBook(updateOrder.getOrderBook())
                 .build());
 
+    }
+    @DeleteMapping("/orders/{orderId}")
+    public void deleteOrderByUserId(@PathVariable("orderId")Long orderId){
+        orderService.deleteOrderById(orderId);
     }
 }
