@@ -5,4 +5,4 @@ INSERT INTO Libros VALUES (4,'La huella de infierno','Leigh Bardugo','12096721',
 INSERT INTO Libros VALUES (5,'El cuco de cristal','Jvier Castillo','12096743', 21);
 INSERT INTO Usuarios VALUES (1,'1','Administrador','Admin', 'javier.trevijano@outlook.com');
 INSERT INTO Usuarios VALUES (2,'12345678','Juan','Campanario', 'juanito@gmail.com');
-INSERT INTO Pedidos
+--INSERT INTO Pedidos (LibroID, UsuarioID, Cantidad) VALUES (1, 1, 2);

@@ -20,7 +20,7 @@ public class Book {
     
     @Id
     @Column(name ="LIBROID")
-    private long id;
+    private Long id;
     
     @Column(name ="TITULO")
     private String title;

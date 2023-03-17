@@ -24,7 +24,7 @@ class BookRepositoryTest {
     public void setup(){
         MockitoAnnotations.initMocks(this);
         bookTest1 = new Book();
-        bookTest1.setId(1);
+        bookTest1.setId(1l);
         bookTest1.setTitle("sdfgsdf");
         bookTest1.setAuthor("sdfsdfsdf");
         bookTest1.setISBN("23423423");
@@ -32,7 +32,7 @@ class BookRepositoryTest {
 
         MockitoAnnotations.initMocks(this);
         bookTest2 = new Book();
-        bookTest2.setId(2);
+        bookTest2.setId(2l);
         bookTest2.setTitle("sfdsdfsdf");
         bookTest2.setAuthor("sdfdf");
         bookTest2.setISBN("23423423");
@@ -62,7 +62,7 @@ class BookRepositoryTest {
     @Test
     public void findByIdTest(){
         Mockito.when(bookRepository.findById(bookTest1.getId())).thenReturn(bookTest1);
-        assertEquals(bookRepository.findById(1), bookTest1);
+        assertEquals(bookRepository.findById(1l), bookTest1);
     }
 
     @Test
