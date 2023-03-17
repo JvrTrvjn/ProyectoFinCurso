@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 @Builder
 public class Order {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="PEDIDOID")
     private Long orderId;
 
