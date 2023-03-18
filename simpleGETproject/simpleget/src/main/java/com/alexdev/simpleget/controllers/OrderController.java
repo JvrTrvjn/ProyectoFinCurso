@@ -29,6 +29,7 @@ public class OrderController {
     }
     @GetMapping("/order/{userId}")
     public Order getOrderByUserId(@PathVariable("userId")Long userId){
+        //User user = userService.getUserById(userId); // obtenemos el objeto User
         return orderService.getOrderByUserId(userId);
     }
 
