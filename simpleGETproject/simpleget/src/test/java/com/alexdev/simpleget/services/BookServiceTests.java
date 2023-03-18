@@ -23,7 +23,7 @@ public class BookServiceTests {
     public void setup(){
         MockitoAnnotations.initMocks(this);
         bookTest1 = new Book();
-        bookTest1.setId(1);
+        bookTest1.setId(1l);
         bookTest1.setTitle("sdfgsdf");
         bookTest1.setAuthor("sdfsdfsdf");
         bookTest1.setISBN("23423423");
@@ -31,7 +31,7 @@ public class BookServiceTests {
 
         MockitoAnnotations.initMocks(this);
         bookTest2 = new Book();
-        bookTest2.setId(2);
+        bookTest2.setId(2l);
         bookTest2.setTitle("sfdsdfsdf");
         bookTest2.setAuthor("sdfdf");
         bookTest2.setISBN("23423423");

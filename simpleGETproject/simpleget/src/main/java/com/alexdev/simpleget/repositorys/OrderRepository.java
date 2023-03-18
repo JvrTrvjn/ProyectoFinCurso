@@ -9,6 +9,6 @@ public interface OrderRepository extends CrudRepository<Order, Long> {
 
 public List<Order> findAll();
 public Order findByOrderUser(Long userId);
-public Order save(Order updateOrder);
- public void deleteByOrderId(Long orderId);
+public Order save(Order newBook);
+ public void deleteById(Long orderId);
 }

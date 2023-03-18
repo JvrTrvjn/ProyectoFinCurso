@@ -9,6 +9,7 @@ import org.mockito.MockitoAnnotations;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -61,13 +62,13 @@ class BookRepositoryTest {
     }
     @Test
     public void findByIdTest(){
-        Mockito.when(bookRepository.findById(bookTest1.getId())).thenReturn(bookTest1);
+        Mockito.when(bookRepository.findById(bookTest1.getId())).thenReturn(Optional.ofNullable(bookTest1));
         assertEquals(bookRepository.findById(1l), bookTest1);
     }
 
     @Test
     public void deleteByIdTest(){
-        Mockito.when(bookRepository.findById(bookTest1.getId())).thenReturn(bookTest1);
+        Mockito.when(bookRepository.findById(bookTest1.getId())).thenReturn(Optional.ofNullable(bookTest1));
         bookRepository.deleteById(bookTest1.getId());
         Mockito.verify(bookRepository).deleteById(bookTest1.getId());
     }

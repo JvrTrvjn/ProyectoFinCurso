@@ -24,7 +24,6 @@ public class BooksController {
 		return bookService.getBook(id);
 	}
 
-
 	@RequestMapping(method = RequestMethod.POST, value ="/books")
 	public void saveBook(@RequestBody Book newBook){
 		bookService.saveBook(newBook);

@@ -5,8 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-
 @Data
 @Entity
 @Table(name ="PEDIDOS")
@@ -26,4 +24,7 @@ public class Order {
     @ManyToOne
     @JoinColumn(name = "USERID")
     private User orderUser;
+
+    @JoinColumn(name = "Cantidad")
+    private Integer cantidad;
 }

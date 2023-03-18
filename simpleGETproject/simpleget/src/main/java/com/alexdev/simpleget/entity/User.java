@@ -1,9 +1,6 @@
 package com.alexdev.simpleget.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,6 +16,7 @@ import org.springframework.stereotype.Component;
 @Builder
 public class User {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="USERID")
     private Long userId;
 
@@ -33,5 +31,9 @@ public class User {
 
     @Column(name ="EMAIL")
     private String email;
+
+    public User(Long userId) {
+        this.userId = userId;
+    }
 
 }

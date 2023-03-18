@@ -1,9 +1,6 @@
 package com.alexdev.simpleget.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -19,6 +16,7 @@ import lombok.NoArgsConstructor;
 public class Book {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name ="LIBROID")
     private Long id;
     
@@ -33,6 +31,8 @@ public class Book {
     
     @Column(name ="PRECIO")
  	  private float price;
-
+    public Book(Long id) {
+        this.id = id;
+    }
 
 }

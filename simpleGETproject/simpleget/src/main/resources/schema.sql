@@ -1,6 +1,6 @@
-CREATE TABLE Libros (LibroID int NOT NULL, Titulo varchar(200),Autor varchar(200),ISBN varchar(200),Precio int);
+CREATE TABLE Libros (LibroID int NOT NULL, Titulo varchar(200),Autor varchar(200),ISBN varchar(200),Precio float);
 CREATE TABLE Usuarios (UsuarioID int NOT NULL, DNI varchar(200), Nombre varchar(200), Apellido varchar(200), Email varchar(200));
-CREATE TABLE Pedidos (PedidoID long NOT NULL ,LibroID long NOT NULL, UsuarioID int, Cantidad int);
+CREATE TABLE Pedidos (PedidoID int NOT NULL ,LibroID int NOT NULL, UsuarioID int, Cantidad int);
 
 -- ALTER TABLE libros add primary key(LibroID);
 -- ALTER TABLE Usuarios add primary key(UsuarioID);
