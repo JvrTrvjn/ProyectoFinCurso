@@ -50,6 +50,15 @@ public class OrderController {
 
     @PutMapping("/order/{orderId}")
     public void updateOrder(@RequestBody Order updateOrder, @PathVariable Long orderId){
+        Book book = updateOrder.getOrderBook();
+        bookService.saveBook(book);
+
+        User user = updateOrder.getOrderUser();
+        userService.saveUser(user);
+
+        updateOrder.setOrderBook(book);
+        updateOrder.setOrderUser(user);
+
         orderService.saveOrder(Order.builder()
                 .orderId(orderId)
                 .orderUser(updateOrder.getOrderUser())
