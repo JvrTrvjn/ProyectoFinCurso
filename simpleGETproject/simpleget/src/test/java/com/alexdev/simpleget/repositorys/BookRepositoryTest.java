@@ -63,7 +63,7 @@ class BookRepositoryTest {
     @Test
     public void findByIdTest(){
         Mockito.when(bookRepository.findById(bookTest1.getId())).thenReturn(Optional.ofNullable(bookTest1));
-        assertEquals(bookRepository.findById(1l), bookTest1);
+        assertEquals(bookRepository.findById(1l).get(), bookTest1);
     }
 
     @Test
