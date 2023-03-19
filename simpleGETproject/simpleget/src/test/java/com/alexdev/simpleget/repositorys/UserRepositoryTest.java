@@ -65,6 +65,9 @@ class UserRepositoryTest {
 
     @Test
     void findByUserId() {
+        Mockito.when(userRepository.findByUserId(userTest1.getUserId()))
+                .thenReturn(userTest1);
+        assertEquals(userRepository.findByUserId(1l), userTest1);
     }
 
     @Test
