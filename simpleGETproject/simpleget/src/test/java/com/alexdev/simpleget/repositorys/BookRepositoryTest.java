@@ -58,7 +58,6 @@ class BookRepositoryTest {
         assertEquals(listTest.get(1).getAuthor(), bookTest2.getAuthor());
         assertEquals(listTest.get(1).getISBN(), bookTest2.getISBN());
         assertEquals(listTest.get(1).getPrice(), bookTest2.getPrice());
-
     }
     @Test
     public void findByIdTest(){

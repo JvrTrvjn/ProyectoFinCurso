@@ -56,11 +56,6 @@ class UserRepositoryTest {
         assertEquals(listTest.get(1).getNombre(),userTest2.getNombre(),"Check");
         assertEquals(listTest.get(1).getApellido(),userTest2.getApellido(),"Check");
         assertEquals(listTest.get(1).getEmail(),userTest2.getEmail(),"Check");
-
-
-
-
-
     }
 
     @Test
@@ -69,9 +64,10 @@ class UserRepositoryTest {
                 .thenReturn(userTest1);
         assertEquals(userRepository.findByUserId(1l), userTest1);
     }
-
     @Test
     void save() {
+        Mockito.when(userRepository.save(userTest1)).thenReturn(userTest1);
+        userRepository.findByUserId(userTest1.getUserId());
     }
 
     @Test
