@@ -68,7 +68,7 @@ public class OrderController {
 
     }
     @DeleteMapping("/order/{orderId}")
-    public void deleteOrderByUserId(@PathVariable("orderId")Long orderId){
+    public void deleteOrderById(@PathVariable("orderId")Long orderId){
         orderService.deleteOrderById(orderId);
     }
 }
