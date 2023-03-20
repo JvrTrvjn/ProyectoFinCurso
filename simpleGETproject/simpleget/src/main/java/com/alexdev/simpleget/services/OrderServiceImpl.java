@@ -20,7 +20,7 @@ public class OrderServiceImpl implements OrderService{
     public Order getOrderByUserId(Long userId) {
         User user = new User();
         user.setUserId(userId);
-        return orderRepository.findByOrderUser(user);
+        return orderRepository.findOrderByUser(user);
     }
 
     @Override
