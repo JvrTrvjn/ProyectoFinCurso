@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 public class BookServiceTests {
 
     @Mock
@@ -73,6 +75,7 @@ public class BookServiceTests {
     }
     @Test
     public void save(){
-        bookService.saveBook(bookTest2);
-        bookService.getBook(bookTest2.getId());
-}}
+        bookService.saveBook(bookTest1);
+        Mockito.verify(bookService).saveBook(bookTest1);
+    }
+}
