@@ -69,7 +69,6 @@ public class BookServiceTests {
 
     @Test
     public void deleteByIdTest(){
-        Mockito.when(bookService.getBook(bookTest1.getId())).thenReturn(bookTest1);
         bookService.delete(bookTest1.getId());
         Mockito.verify(bookService).delete(bookTest1.getId());
     }
