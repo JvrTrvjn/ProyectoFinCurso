@@ -70,7 +70,7 @@ class UserRepositoryTest {
     }
 
     @Test
-    void deleteByUserId() {
+    void deleteUserById() {
         Mockito.when(userRepository.findByUserId(userTest1.getUserId())).thenReturn(userTest1);
         userRepository.deleteByUserId(userTest1.getUserId());
         Mockito.verify(userRepository).deleteByUserId(userTest1.getUserId());

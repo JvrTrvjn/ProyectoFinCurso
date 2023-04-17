@@ -56,8 +56,8 @@ class OrderServiceTest {
     void getOrderByUserId() {
 
         Long userId = user1.getUserId();
-        Mockito.when(orderService.getOrderByUserId(user1.getUserId())).thenReturn(orderTest1);
-        assertEquals(orderService.getOrderByUserId(userId), orderTest1);
+        Mockito.when(orderService.getOrderById(user1.getUserId())).thenReturn(orderTest1);
+        assertEquals(orderService.getOrderById(userId), orderTest1);
     }
 
     @Test

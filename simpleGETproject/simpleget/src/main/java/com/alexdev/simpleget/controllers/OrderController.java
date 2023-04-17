@@ -3,6 +3,7 @@ package com.alexdev.simpleget.controllers;
 import com.alexdev.simpleget.entity.Book;
 import com.alexdev.simpleget.entity.Order;
 import com.alexdev.simpleget.entity.User;
+import com.alexdev.simpleget.repositorys.OrderRepository;
 import com.alexdev.simpleget.services.BookService;
 import com.alexdev.simpleget.services.OrderService;
 import com.alexdev.simpleget.services.UserService;
@@ -22,15 +23,18 @@ public class OrderController {
 
     @Autowired
     private UserService userService;
+    @Autowired
+    private OrderRepository orderRepository;
 
     @GetMapping("/orders")
     public List<Order> getAllOrders(){
         return orderService.getAllOrders();
     }
-    @GetMapping("/order/{userId}")
-    public Order getOrderByUserId(@PathVariable("userId")Long userId){
+
+    @GetMapping("/order/{orderId}")
+    public Order getOrderById(@PathVariable("orderId")Long orderId){
         //User user = userService.getUserById(userId); // obtenemos el objeto User
-        return orderService.getOrderByUserId(userId);
+        return orderService.getOrderById(orderId);
     }
 
     @PostMapping("/orders")

@@ -9,7 +9,7 @@ import java.util.List;
 public interface OrderRepository extends CrudRepository<Order, Long> {
 
 public List<Order> findAll();
-public Order findOrderByUser(User user);
+public Order findByOrderId(Long orderId);
 public Order save(Order newBook);
  public void deleteById(Long orderId);
 }

@@ -70,8 +70,8 @@ class OrderRepositoryTest {
 
     @Test
     void findOrderByUser() {
-        Mockito.when(orderRepository.findOrderByUser(user1)).thenReturn(orderTest1);
-        assertEquals(orderRepository.findOrderByUser(user1), orderTest1);
+        Mockito.when(orderRepository.findByOrderId(user1.getUserId())).thenReturn(orderTest1);
+        assertEquals(orderRepository.findByOrderId(user1.getUserId()), orderTest1);
     }
 
     @Test
