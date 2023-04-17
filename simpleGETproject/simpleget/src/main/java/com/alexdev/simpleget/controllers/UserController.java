@@ -26,8 +26,9 @@ public class UserController {
         userService.saveUser(newUser);
     }
     @DeleteMapping("/user/{userId}")
-    public void deleteUserById(@PathVariable Long userId){
+    public String deleteUserById(@PathVariable Long userId){
         userService.deleteUserById(userId);
+        return "Usuario con id: " + userId + " eliminado";
     }
     @PutMapping("/user/{userId}")
     public void updateUser(@RequestBody User updateUser, @PathVariable Long userId){
